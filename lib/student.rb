@@ -56,10 +56,10 @@ end
   def self.find_by_name(name)
     sql = <<-SQL
     SELECT * FROM students
-    WHERE students.name = name
+    WHERE students.name = ?
     SQL
     
-    DB[:conn].execute(sql)[0].new_from_db
+    DB[:conn].execute(sql, name)[0].map { |row| new_from_db(row) }.first 
   end
 
 

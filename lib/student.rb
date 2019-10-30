@@ -59,7 +59,7 @@ end
     WHERE students.name = name
     SQL
     
-    DB[:conn].execute(sql).new_from_db
+    DB[:conn].execute(sql)[0].new_from_db
   end
 
 

@@ -47,6 +47,11 @@ end
     student = Student.new(name, grade)
     student.save
   end
+  
+  def self.new_from_db(array)
+    student = Student.new(array[0],array[1], array[2])
+    student
+  end
 
 
 end

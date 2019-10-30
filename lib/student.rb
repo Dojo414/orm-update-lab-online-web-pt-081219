@@ -17,7 +17,7 @@ attr_accessor :name, :id, :grade
       grade TEXT)
       SQL
       
-      DB[:conn]
+      DB[:conn].execute(sql)
   end
      
 

@@ -29,6 +29,8 @@ attr_accessor :name, :id, :grade
   end
   
   def save 
+    if self.id
+      self.update
     sql = <<-SQL
     INSERT INTO students (name, grade)
     VALUES (?,?)
@@ -38,6 +40,8 @@ attr_accessor :name, :id, :grade
     
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
   end
+  
+  def self.create 
      
 
 

@@ -45,7 +45,8 @@ attr_accessor :name, :id, :grade
     student = Student.new(name, grade)
     student.save
   end
-     
+  
+end
 
 
 end
